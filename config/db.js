@@ -1,12 +1,13 @@
 const mongoose = require("mongoose");
 
 // Replace this with your MONGOURI.
-const MONGOURI = "mongodb://test:a12345@ds257698.mlab.com:57698/node-auth";
+const MONGOURI = "mongodb://127.0.0.1:27017/node-auth";
 
 const InitiateMongoServer = async () => {
   try {
     await mongoose.connect(MONGOURI, {
-      useNewUrlParser: true
+      useNewUrlParser: true,
+      useUnifiedTopology: true
     });
     console.log("Connected to DB !!");
   } catch (e) {

@@ -1,5 +1,5 @@
 const express = require("express");
-const { check, validationResult } = require("express-validator/check");
+const { check, validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const router = express.Router();
@@ -32,7 +32,7 @@ router.post(
       });
     }
 
-    const { username, email, password } = req.body;
+    let { username, email, password } = req.body;
     try {
       let user = await User.findOne({
         email
