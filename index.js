@@ -15,6 +15,7 @@ const PORT = process.env.PORT || 4000;
 
 // Middleware
 app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 app.use(logger('dev'));
 

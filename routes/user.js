@@ -78,7 +78,7 @@ router.post(
       res.status(500).send("Error in Saving");
     }
   }
-);
+  );
 
 router.post(
   "/login",
